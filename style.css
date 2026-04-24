@@ -1,0 +1,1012 @@
+/* ============================================
+   ============================================
+   CSS RESET & BASE STYLES
+   ============================================
+   Yeh code website ki default styling ko reset karta hai
+   Taake sab browsers mein ek jaisa dikhe
+   ============================================ */
+
+/* UNIVERSAL SELECTOR - Saare elements par apply hoga */
+* {
+    margin: 0;           /* Bahar ka spacing zero karo */
+    padding: 0;          /* Andar ka spacing zero karo */
+    box-sizing: border-box;  /* Width/height mein padding aur border include ho */
+}
+
+/* ============================================
+   BODY STYLES - Poori website ka background aur font
+   ============================================ */
+body {
+    /* System fonts - fast load hote hain because external nahi hai */
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    
+    /* Gradient background - 3 colors ka smooth transition */
+    /* Light mode ke liye: Light blue → Light green → Light purple */
+    background: linear-gradient(135deg, #A9EAF1 0%, #BBF7C2 50%, #D1C2F7 100%);
+    
+    /* Text color light mode mein */
+    color: #1a1a2e;
+    
+    /* Smooth transition for dark mode toggle */
+    transition: all 0.3s ease;
+    
+    /* Minimum height full viewport height tak */
+    min-height: 100vh;
+    
+    /* Line spacing for better readability */
+    line-height: 1.5;
+    
+    /* Font smoothing for better rendering on Mac/iPhone */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================
+   DARK MODE STYLES - Jab user dark mode select karega
+   ============================================ */
+
+/* body.dark matlab jab body par 'dark' class ho */
+body.dark {
+    /* Dark gradient - deep purple shades */
+    background: linear-gradient(135deg, #0f0c29, #1a1a3e, #24243e);
+    /* Text white in dark mode */
+    color: #ffffff;
+}
+
+/* Dark mode mein cards ka background gray hoga */
+body.dark .card,
+body.dark .category-card,
+body.dark .blog-card {
+    background: #2d2d2d;  /* Dark gray */
+}
+
+/* Dark mode mein white background wali sections */
+body.dark .bg-white {
+    background: rgba(30, 30, 30, 0.9);  /* Semi-transparent dark */
+    backdrop-filter: blur(10px);  /* Blur effect for glassmorphism */
+}
+
+/* Dark mode mein search box ke inputs */
+body.dark .search-box input {
+    background: #2d2d2d;  /* Dark background */
+    color: white;          /* White text */
+    border: 1px solid #444;  /* Subtle border */
+}
+
+/* Dark mode mein contact form ke fields */
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+    background: #2d2d2d;
+    color: white;
+    border-color: #444;
+}
+
+/* Dark mode mein about section */
+body.dark .about-content {
+    background: #2d2d2d;
+}
+
+/* ============================================
+   CONTAINER - Sab content ko center aur limit karta hai
+   ============================================ */
+.container {
+    max-width: 1200px;  /* Maximum width 1200 pixels */
+    margin: 0 auto;      /* Auto margins se center mein aayega */
+    padding: 0 20px;     /* Left-right padding for mobile */
+}
+
+/* ============================================
+   HEADER / NAVIGATION BAR
+   ============================================ */
+header {
+    /* Dark gradient for header */
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    padding: 15px 0;  /* Top-bottom 15px, left-right 0 */
+    
+    /* Sticky header - scroll karte waqt top par rahega */
+    position: sticky;
+    top: 0;
+    
+    /* High z-index so overlay ho sab par */
+    z-index: 1000;
+    
+    /* Subtle shadow for depth */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Flexbox layout for header content */
+.header-flex {
+    display: flex;
+    justify-content: space-between;  /* Left and right side */
+    align-items: center;              /* Vertically center */
+    flex-wrap: wrap;                  /* Mobile par wrap ho jaye */
+    gap: 15px;                        /* Space between items */
+}
+
+/* Logo styling */
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Logo ke span part (Group) ka orange color */
+.logo span {
+    color: #ff6b35;
+}
+
+/* Right side buttons ka container */
+.header-right {
+    display: flex;
+    gap: 15px;  /* Space between buttons */
+    align-items: center;
+}
+
+/* Dark mode toggle button */
+.dark-btn {
+    background: #ff6b35;  /* Orange background */
+    border: none;
+    padding: 8px 18px;
+    border-radius: 25px;   /* Pill shape */
+    cursor: pointer;        /* Hand cursor on hover */
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;  /* Smooth animations */
+}
+
+/* Hover effect on dark mode button */
+.dark-btn:hover {
+    transform: scale(1.05);  /* Slightly bigger */
+    box-shadow: 0 0 15px rgba(255,107,53,0.5);  /* Glow effect */
+}
+
+/* Mobile menu button (hamburger) - Desktop par hidden */
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    display: none;  /* Hidden on desktop */
+}
+
+/* Navigation menu */
+.nav-menu {
+    display: flex;
+    gap: 30px;  /* Space between menu items */
+    list-style: none;  /* Remove bullet points */
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+/* Navigation links */
+.nav-menu a {
+    color: white;
+    text-decoration: none;  /* Remove underline */
+    transition: color 0.3s;  /* Smooth color change */
+}
+
+/* Hover effect on nav links */
+.nav-menu a:hover {
+    color: #ff6b35;  /* Orange on hover */
+}
+
+/* ============================================
+   HERO SECTION - Top banner area
+   ============================================ */
+.hero {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    
+    /* Rounded bottom corners */
+    border-radius: 0 0 30px 30px;
+}
+
+/* Hero title with animation */
+.hero-title {
+    /* clamp(min, preferred, max) - responsive font size */
+    font-size: clamp(28px, 5vw, 40px);
+    margin-bottom: 15px;
+    
+    /* Slide down animation when page loads */
+    animation: slideDown 0.8s ease-out;
+}
+
+/* Slide down animation keyframes */
+@keyframes slideDown {
+    from {
+        opacity: 0;              /* Start invisible */
+        transform: translateY(-50px);  /* Start 50px above */
+    }
+    to {
+        opacity: 1;              /* End visible */
+        transform: translateY(0);      /* End at normal position */
+    }
+}
+
+/* Hero paragraph */
+.hero p {
+    font-size: clamp(16px, 3vw, 18px);
+    margin-bottom: 30px;
+    max-width: 600px;      /* Limit width */
+    margin-left: auto;      /* Center horizontally */
+    margin-right: auto;
+}
+
+/* ============================================
+   SEARCH BOX
+   ============================================ */
+.search-box {
+    max-width: 500px;
+    margin: 0 auto;  /* Center */
+    display: flex;   /* Flex for side-by-side */
+}
+
+/* Search input field */
+.search-box input {
+    flex: 1;                /* Takes remaining space */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px 0 0 30px;  /* Round left side only */
+    outline: none;          /* Remove default focus outline */
+    font-size: 16px;
+}
+
+/* Search button */
+.search-box button {
+    padding: 12px 25px;
+    background: #ff6b35;
+    border: none;
+    border-radius: 0 30px 30px 0;  /* Round right side only */
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+/* Search button hover */
+.search-box button:hover {
+    background: #e55a2b;
+}
+
+/* ============================================
+   SECTION STYLES
+   ============================================ */
+.section {
+    padding: 50px 0;  /* Top-bottom 50px padding */
+}
+
+/* White background section with glassmorphism */
+.bg-white {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);  /* Glass blur effect */
+    border-radius: 30px;
+    margin: 20px;
+}
+
+/* Section title styling */
+.section-title {
+    text-align: center;
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Underline effect for section title */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #ff6b35;
+    margin: 10px auto;
+    border-radius: 3px;
+}
+
+/* ============================================
+   CATEGORY GRID - Responsive grid layout
+   ============================================ */
+.category-grid {
+    display: grid;
+    /* auto-fit: automatically fit as many columns as possible */
+    /* minmax(150px, 1fr): minimum 150px, maximum 1 fraction */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;  /* Space between cards */
+}
+
+/* Individual category card */
+.category-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Hover effect - card lifts up */
+.category-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(255,107,53,0.3);
+    border: 2px solid #ff6b35;
+    animation: strongShake 0.4s ease-in-out;
+}
+
+/* Shake animation on hover */
+@keyframes strongShake {
+    0%, 100% { transform: translateX(0) translateY(-8px) scale(1.02); }
+    25% { transform: translateX(-8px) translateY(-8px) scale(1.02); }
+    50% { transform: translateX(8px) translateY(-8px) scale(1.02); }
+    75% { transform: translateX(-4px) translateY(-8px) scale(1.02); }
+}
+
+/* Active/Click effect */
+.category-card:active {
+    animation: powerfulGlow 0.3s ease-out;
+    background: linear-gradient(135deg, #ff6b35, #ff8c5a);
+    color: white;
+    transform: scale(0.97);
+}
+
+/* Glow animation on click */
+@keyframes powerfulGlow {
+    0% { box-shadow: 0 0 0 0 rgba(255,107,53,0.8); }
+    50% { box-shadow: 0 0 0 25px rgba(255,107,53,0.3); }
+    100% { box-shadow: 0 0 0 0 rgba(255,107,53,0); }
+}
+
+/* Category icon (emoji) */
+.category-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* ============================================
+   PRODUCT GRID
+   ============================================ */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Product card */
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;  /* Hide anything that spills out */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(255,107,53,0.4);
+    border: 2px solid #ff6b35;
+    animation: cardStrongShake 0.4s ease-in-out;
+}
+
+/* Card shake animation */
+@keyframes cardStrongShake {
+    0%, 100% { transform: translateX(0) translateY(-12px) scale(1.02); }
+    25% { transform: translateX(-6px) translateY(-12px) scale(1.02); }
+    50% { transform: translateX(6px) translateY(-12px) scale(1.02); }
+    75% { transform: translateX(-3px) translateY(-12px) scale(1.02); }
+}
+
+/* Card click effect */
+.card:active {
+    animation: cardPowerfulGlow 0.35s ease-out;
+    transform: scale(0.97);
+}
+
+/* Card glow animation */
+@keyframes cardPowerfulGlow {
+    0% { box-shadow: 0 0 0 0 rgba(255,107,53,0.9); }
+    30% { box-shadow: 0 0 0 20px rgba(255,107,53,0.4); }
+    100% { box-shadow: 0 0 0 0 rgba(255,107,53,0); }
+}
+
+/* Shine effect on card hover */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.7s ease;
+    pointer-events: none;  /* So it doesn't block clicks */
+    z-index: 1;
+}
+
+/* Move shine across card on hover */
+.card:hover::before {
+    left: 100%;
+}
+
+/* Card image container */
+.card-img {
+    height: 220px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    position: relative;
+    z-index: 0;
+}
+
+/* Card image */
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Cover entire area without distortion */
+    transition: transform 0.6s ease;
+}
+
+/* Zoom image on card hover */
+.card:hover .card-img img {
+    transform: scale(1.1);
+}
+
+/* Card content area */
+.card-content {
+    padding: 20px;
+    position: relative;
+    z-index: 0;
+}
+
+/* Card title */
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Rating stars color */
+.rating {
+    color: #ffc107;  /* Golden yellow */
+    margin: 10px 0;
+}
+
+/* Price styling */
+.price {
+    font-size: 24px;
+    color: #ff6b35;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Old price (strikethrough) */
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+/* Buy button */
+.buy-btn {
+    display: block;
+    background: #ff6b35;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: all 0.3s;
+}
+
+/* Buy button hover */
+.buy-btn:hover {
+    background: #e55a2b;
+    transform: scale(1.02);
+    box-shadow: 0 5px 20px rgba(255,107,53,0.5);
+}
+
+/* ============================================
+   BLOG GRID - Latest posts section
+   ============================================ */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Blog card */
+.blog-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+/* Blog card hover */
+.blog-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 15px 35px rgba(255,107,53,0.3);
+    border: 2px solid #ff6b35;
+    animation: blogStrongShake 0.4s ease-in-out;
+}
+
+/* Blog shake animation */
+@keyframes blogStrongShake {
+    0%, 100% { transform: translateX(0) translateY(-8px) scale(1.01); }
+    25% { transform: translateX(-5px) translateY(-8px) scale(1.01); }
+    50% { transform: translateX(5px) translateY(-8px) scale(1.01); }
+    75% { transform: translateX(-2px) translateY(-8px) scale(1.01); }
+}
+
+/* Blog click effect */
+.blog-card:active {
+    animation: blogPowerfulGlow 0.3s ease-out;
+    transform: scale(0.98);
+}
+
+@keyframes blogPowerfulGlow {
+    0% { box-shadow: 0 0 0 0 rgba(255,107,53,0.7); }
+    50% { box-shadow: 0 0 0 20px rgba(255,107,53,0.2); }
+    100% { box-shadow: 0 0 0 0 rgba(255,107,53,0); }
+}
+
+/* Blog image container */
+.blog-img {
+    height: 180px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    overflow: hidden;
+}
+
+/* Blog image */
+.blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Zoom blog image on hover */
+.blog-card:hover .blog-img img {
+    transform: scale(1.08);
+}
+
+/* Blog content area */
+.blog-content {
+    padding: 20px;
+}
+
+/* Blog category label */
+.blog-cat {
+    color: #ff6b35;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   NEWSLETTER SECTION - Email subscription
+   ============================================ */
+.newsletter {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 30px;
+    margin: 20px;
+}
+
+/* Newsletter title */
+.newsletter h3 {
+    font-size: clamp(24px, 5vw, 28px);
+    margin-bottom: 10px;
+}
+
+/* Newsletter form container */
+.newsletter form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Newsletter input field */
+.newsletter input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    min-width: 200px;
+}
+
+/* Newsletter button */
+.newsletter button {
+    padding: 12px 25px;
+    background: #ff6b35;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+/* Newsletter button hover */
+.newsletter button:hover {
+    transform: scale(1.05);
+    background: #e55a2b;
+    box-shadow: 0 0 20px rgba(255,107,53,0.5);
+}
+
+/* Small note below newsletter */
+.newsletter-note {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 15px;
+}
+
+/* ============================================
+   PAGE HERO - For About and Contact pages
+   ============================================ */
+.page-hero {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 0 0 30px 30px;
+}
+
+.page-hero h1 {
+    font-size: clamp(28px, 5vw, 40px);
+    margin-bottom: 10px;
+}
+
+/* ============================================
+   CONTACT FORM
+   ============================================ */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+/* Focus effect on form fields */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff6b35;
+    outline: none;
+    box-shadow: 0 0 15px rgba(255,107,53,0.4);
+    transform: scale(1.01);
+}
+
+/* Submit button */
+.contact-form button {
+    background: #ff6b35;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+/* Submit button hover */
+.contact-form button:hover {
+    background: #e55a2b;
+    transform: scale(1.03);
+    box-shadow: 0 5px 20px rgba(255,107,53,0.4);
+}
+
+/* ============================================
+   ABOUT PAGE CONTENT
+   ============================================ */
+.about-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s;
+}
+
+/* About content hover */
+.about-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255,107,53,0.2);
+}
+
+.about-content h2, .about-content h3 {
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;  /* Better readability */
+}
+
+/* ============================================
+   FOOTER SECTION
+   ============================================ */
+footer {
+    background: #1a1a2e;
+    color: #ccc;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 30px;
+    border-radius: 30px 30px 0 0;  /* Top corners rounded */
+}
+
+/* Footer grid layout */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Footer column headings */
+.footer-col h4 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Footer links */
+.footer-col a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+/* Footer link hover */
+.footer-col a:hover {
+    color: #ff6b35;
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+}
+
+/* ============================================
+   FLOATING ANIMATION - Cards float gently
+   ============================================ */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Apply float animation to all cards */
+.card, .category-card, .blog-card {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Stagger animation for product cards */
+.card:nth-child(2) { animation-delay: 0.3s; }   /* 2nd card late start */
+.card:nth-child(3) { animation-delay: 0.6s; }   /* 3rd card even later */
+.card:nth-child(4) { animation-delay: 0.9s; }   /* 4th card latest */
+
+/* ============================================
+   RIPPLE EFFECT ON BUTTONS
+   ============================================ */
+.buy-btn {
+    position: relative;
+    overflow: hidden;  /* Hide ripple overflow */
+}
+
+/* Pseudo-element for ripple effect */
+.buy-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+/* Ripple expands on click */
+.buy-btn:active::after {
+    width: 200%;
+    height: 200%;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - Mobile Friendly
+   ============================================ */
+
+/* Tablet and mobile devices (max-width 768px) */
+@media (max-width: 768px) {
+    /* Show mobile menu button */
+    .menu-btn {
+        display: block;
+    }
+    
+    /* Hide nav menu by default on mobile */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 0;
+    }
+    
+    /* Show menu when 'show' class is added */
+    .nav-menu.show {
+        display: flex;
+    }
+    
+    /* Reduce hero padding on mobile */
+    .hero {
+        padding: 40px 20px;
+    }
+    
+    /* Single column layout for all grids on mobile */
+    .product-grid,
+    .category-grid,
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Stack search box vertically on mobile */
+    .search-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Full border radius on mobile */
+    .search-box input {
+        border-radius: 30px;
+    }
+    
+    .search-box button {
+        border-radius: 30px;
+    }
+    
+    /* Stack newsletter form vertically */
+    .newsletter form {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    
+    /* Reduce margins on mobile */
+    .bg-white {
+        margin: 10px;
+    }
+    
+    .newsletter {
+        margin: 10px;
+    }
+    
+    /* Single column footer on mobile */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    /* Reduce section padding on mobile */
+    .section {
+        padding: 30px 0;
+    }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* For users who prefer reduced motion (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;  /* Almost instant */
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Optimize images */
+img {
+    max-width: 100%;     /* Never exceed container width */
+    height: auto;        /* Maintain aspect ratio */
+    display: block;      /* Remove extra spacing below images */
+}
+
+/* Lazy loading placeholder effect */
+img[loading="lazy"] {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* ============================================
+   ============================================
+   EXTRA SEO & ACCESSIBILITY IMPROVEMENTS
+   ============================================
+   ============================================ */
+
+/* Focus visible styles for keyboard navigation */
+:focus-visible {
+    outline: 3px solid #ff6b35;
+    outline-offset: 2px;
+}
+
+/* Skip to content link for screen readers (accessibility) */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #ff6b35;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 10000;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+/* Print styles - when user prints the page */
+@media print {
+    .dark-btn, .menu-btn, .search-box, .newsletter, footer {
+        display: none;  /* Hide unnecessary elements on print */
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .card {
+        break-inside: avoid;  /* Prevent cards breaking across pages */
+    }
+}
+
+/* Scroll behavior smooth for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff6b35;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e55a2b;
+}

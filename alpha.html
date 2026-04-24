@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!-- DOCTYPE: Browser ko batata hai ke ye HTML5 document hai -->
+<html lang="en">
+<!-- lang="en" means page English mein hai, accessibility aur SEO ke liye -->
+
+<head>
+    <!-- HEAD section: Metadata, styles, scripts ke links, browser ko information dene ke liye -->
+    
+    <!-- META CHARSET: Character encoding UTF-8 (Urdu, Emoji, special characters support) -->
+    <meta charset="UTF-8">
+    
+    <!-- VIEWPORT: Mobile devices ke liye responsive scaling, width=device-width means screen ke according adjust -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- SEO TITLE: Browser tab mein dikhta hai, search engine result ka title -->
+    <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
+    <title>Best Travel Gadgets 2026 | BISMILLAH Developers - Honest Tech Reviews</title>
+    
+    <!-- META DESCRIPTION: Search result ke neeche description -->
+    <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
+    <meta name="description" content="Discover the best travel gadgets 2026. Honest reviews, expert recommendations, and exclusive affiliate deals on headphones, power banks, cameras, and more. Save money today!">
+    
+    <!-- KEYWORDS: SEO ke liye relevant terms -->
+    <meta name="keywords" content="travel gadgets, tech reviews, best gadgets 2026, affiliate marketing, wireless headphones, power bank, action camera, fitness tracker, travel accessories">
+    
+    <!-- AUTHOR & ROBOTS: Author ka naam -->
+    <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
+    <meta name="author" content="BISMILLAH">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- CANONICAL URL: Duplicate content se bachne ke liye -->
+    <!-- ✅ Changed: alsamadgroup.com -> syedsethar.com (example domain) -->
+    <link rel="canonical" href="https://BISMILLAH.com">
+    
+    <!-- OPEN GRAPH (OG) TAGS: Social media sharing ke liye -->
+    <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
+    <meta property="og:title" content="Best Travel Gadgets 2026 | Syed Sethar">
+    <meta property="og:description" content="Expert reviews and best deals on travel gadgets. Find the perfect tech for your next adventure!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://BISMILLAH.com">
+    <meta property="og:image" content="https://BISMILLAH.com/images/og-image.jpg">
+    <meta property="og:site_name" content="BISMILLAH">
+    
+    <!-- TWITTER CARD: Twitter par share karne ke liye -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Best Travel Gadgets 2026">
+    <meta name="twitter:description" content="Honest reviews and best deals on travel gadgets.">
+    
+    <!-- PRELOAD & PRECONNECT: Performance optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="style.css">
+    
+    <!-- CSS STYLESHEET: External CSS file link -->
+    <link rel="stylesheet" href="style.css" media="all">
+    
+    <!-- FAVICON: Browser tab ka icon, emoji based -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎒</text></svg>">
+    
+    <!-- SCHEMA MARKUP (WebSite): Rich snippets ke liye -->
+    <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ss",
+        "url": "https://BISMILLAH.com",
+        "description": "Best travel gadgets and tech reviews with affiliate deals",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://ss.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- ORGANIZATION SCHEMA: Company info -->
+    <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SS",
+        "url": "https://BISMILLAH.com",
+        "logo": "https://ss.com/images/logo.png",
+        "sameAs": [
+            "https://facebook.com/BISMILLAH",
+            "https://twitter.com/BISMILLAH",
+            "https://instagram.com/BISMILLAH"
+        ]
+    }
+    </script>
+</head>
+
+<body>
+
+<!-- HEADER: Navigation bar -->
+<header>
+    <div class="container">
+        <div class="header-flex">
+            <!-- ✅ LOGO: IMAGE KI JAGAH TEXT "Syed Sethar Developers" - as requested -->
+            <!-- Logo image hataya, ab sirf text hai -->
+            <h1 class="logo">BISMILLAH <span>Developers</span></h1>
+            <div class="header-right">
+                <button id="darkModeBtn" class="dark-btn" aria-label="Dark Mode Toggle">🌙 Dark</button>
+                <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+            </div>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('reviews')">Reviews</a></li>
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- HOME PAGE -->
+<main id="homePage">
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Best Travel Gadgets 2026</h1>
+            <p>Discover the latest tech and exclusive affiliate deals for your next adventure</p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search products..." aria-label="Search products">
+                <button id="searchBtn" aria-label="Search">🔍 Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid" id="categoryGrid"></div>
+        </div>
+    </section>
+
+    <section class="section bg-white">
+        <div class="container">
+            <h2 class="section-title">Top Rated Products</h2>
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Latest from Our Blog</h2>
+            <div class="blog-grid" id="blogGrid"></div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h3>Subscribe for Best Deals</h3>
+            <p>Get exclusive discounts and early access to deals straight to your inbox</p>
+            <form id="newsletterForm">
+                <input type="email" placeholder="Your email address" required aria-label="Email address">
+                <button type="submit" aria-label="Subscribe">Subscribe ✉️</button>
+            </form>
+            <p class="newsletter-note">No spam, unsubscribe anytime.</p>
+        </div>
+    </section>
+</main>
+
+<!-- ABOUT PAGE -->
+<div id="aboutPage" style="display:none">
+    <section class="page-hero">
+        <div class="container">
+            <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
+            <h1>About BISMILLAH Developers</h1>
+            <p>Your trusted source for honest product reviews since 2024</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <h2>Our Mission</h2>
+                <p>We provide honest, unbiased product reviews to help you make informed purchasing decisions. As an affiliate, we earn from qualifying purchases at no extra cost to you.</p>
+                <h3>Why Trust Us?</h3>
+                <p>✓ Expert reviews from real users<br>✓ Best price comparisons<br>✓ Exclusive affiliate deals<br>✓ 100% honest recommendations</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- CONTACT PAGE -->
+<div id="contactPage" style="display:none">
+    <section class="page-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <form id="contactForm" class="contact-form">
+                <input type="text" id="contactName" placeholder="Your Name" required>
+                <input type="email" id="contactEmail" placeholder="Your Email" required>
+                <textarea id="contactMsg" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message ✉️</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
+                <h4>BISMILLAH Developers</h4>
+                <p>Honest reviews. Best prices. Since 2024.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#" onclick="showPage('home')">Home</a>
+                <a href="#" onclick="showPage('about')">About</a>
+                <a href="#" onclick="showPage('contact')">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <a href="#" onclick="filterByCategory('Tech & Gadgets')">Tech & Gadgets</a>
+                <a href="#" onclick="filterByCategory('Home & Kitchen')">Home & Kitchen</a>
+                <a href="#" onclick="filterByCategory('Fashion & Beauty')">Fashion & Beauty</a>
+                <a href="#" onclick="filterByCategory('Health & Fitness')">Health & Fitness</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
+            <p>&copy; 2025 S2S. As an Amazon Associate we earn from qualifying purchases.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
