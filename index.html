@@ -1,106 +1,43 @@
 <!DOCTYPE html>
-<!-- DOCTYPE: Browser ko batata hai ke ye HTML5 document hai -->
 <html lang="en">
-<!-- lang="en" means page English mein hai, accessibility aur SEO ke liye -->
 
 <head>
-    <!-- HEAD section: Metadata, styles, scripts ke links, browser ko information dene ke liye -->
-    
-    <!-- META CHARSET: Character encoding UTF-8 (Urdu, Emoji, special characters support) -->
     <meta charset="UTF-8">
-    
-    <!-- VIEWPORT: Mobile devices ke liye responsive scaling, width=device-width means screen ke according adjust -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    <!-- SEO TITLE: Browser tab mein dikhta hai, search engine result ka title -->
-    <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
-    <title>Best Travel Gadgets 2026 | BISMILLAH Developers - Honest Tech Reviews</title>
+    <!-- ✅ Title changed to only "travelinggadgets 2026" -->
+    <title>travelinggadgets 2026</title>
     
-    <!-- META DESCRIPTION: Search result ke neeche description -->
-    <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
-    <meta name="description" content="Discover the best travel gadgets 2026. Honest reviews, expert recommendations, and exclusive affiliate deals on headphones, power banks, cameras, and more. Save money today!">
-    
-    <!-- KEYWORDS: SEO ke liye relevant terms -->
-    <meta name="keywords" content="travel gadgets, tech reviews, best gadgets 2026, affiliate marketing, wireless headphones, power bank, action camera, fitness tracker, travel accessories">
-    
-    <!-- AUTHOR & ROBOTS: Author ka naam -->
-    <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
+    <meta name="description" content="Discover the best travel gadgets 2026. Honest reviews, expert recommendations, and exclusive affiliate deals on headphones, power banks, cameras, and more.">
+    <meta name="keywords" content="travel gadgets, tech reviews, best gadgets 2026, affiliate marketing, wireless headphones, power bank, action camera">
     <meta name="author" content="BISMILLAH">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
     
-    <!-- CANONICAL URL: Duplicate content se bachne ke liye -->
-    <!-- ✅ Changed: alsamadgroup.com -> syedsethar.com (example domain) -->
-    <link rel="canonical" href="https://BISMILLAH.com">
+    <!-- ⚠️ Temporary canonical (abhi ke liye khali, baad mein domain daal dena) -->
+    <!-- <link rel="canonical" href="https://travelinggadgets.dpdns.org"> -->
     
-    <!-- OPEN GRAPH (OG) TAGS: Social media sharing ke liye -->
-    <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
-    <meta property="og:title" content="Best Travel Gadgets 2026 | Syed Sethar">
-    <meta property="og:description" content="Expert reviews and best deals on travel gadgets. Find the perfect tech for your next adventure!">
+    <meta property="og:title" content="travelinggadgets 2026">
+    <meta property="og:description" content="Best travel gadgets and exclusive deals.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://BISMILLAH.com">
-    <meta property="og:image" content="https://BISMILLAH.com/images/og-image.jpg">
-    <meta property="og:site_name" content="BISMILLAH">
+    <!-- ⚠️ OG image commented until you upload one -->
+    <!-- <meta property="og:image" content="https://travelinggadgets.dpdns.org/images/og-image.jpg"> -->
     
-    <!-- TWITTER CARD: Twitter par share karne ke liye -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Best Travel Gadgets 2026">
-    <meta name="twitter:description" content="Honest reviews and best deals on travel gadgets.">
-    
-    <!-- PRELOAD & PRECONNECT: Performance optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="style.css">
     
-    <!-- CSS STYLESHEET: External CSS file link -->
     <link rel="stylesheet" href="style.css" media="all">
     
-    <!-- FAVICON: Browser tab ka icon, emoji based -->
+    <!-- Favicon (emoji) - works in most modern browsers -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎒</text></svg>">
-    
-    <!-- SCHEMA MARKUP (WebSite): Rich snippets ke liye -->
-    <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "ss",
-        "url": "https://BISMILLAH.com",
-        "description": "Best travel gadgets and tech reviews with affiliate deals",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://ss.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script>
-    
-    <!-- ORGANIZATION SCHEMA: Company info -->
-    <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "SS",
-        "url": "https://BISMILLAH.com",
-        "logo": "https://ss.com/images/logo.png",
-        "sameAs": [
-            "https://facebook.com/BISMILLAH",
-            "https://twitter.com/BISMILLAH",
-            "https://instagram.com/BISMILLAH"
-        ]
-    }
-    </script>
 </head>
 
 <body>
 
-<!-- HEADER: Navigation bar -->
 <header>
     <div class="container">
         <div class="header-flex">
-            <!-- ✅ LOGO: IMAGE KI JAGAH TEXT "Syed Sethar Developers" - as requested -->
-            <!-- Logo image hataya, ab sirf text hai -->
             <h1 class="logo">BISMILLAH <span>Developers</span></h1>
             <div class="header-right">
                 <button id="darkModeBtn" class="dark-btn" aria-label="Dark Mode Toggle">🌙 Dark</button>
@@ -116,7 +53,6 @@
     </div>
 </header>
 
-<!-- HOME PAGE -->
 <main id="homePage">
     <section class="hero">
         <div class="container">
@@ -163,11 +99,9 @@
     </section>
 </main>
 
-<!-- ABOUT PAGE -->
 <div id="aboutPage" style="display:none">
     <section class="page-hero">
         <div class="container">
-            <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
             <h1>About BISMILLAH Developers</h1>
             <p>Your trusted source for honest product reviews since 2024</p>
         </div>
@@ -184,7 +118,6 @@
     </section>
 </div>
 
-<!-- CONTACT PAGE -->
 <div id="contactPage" style="display:none">
     <section class="page-hero">
         <div class="container">
@@ -204,12 +137,10 @@
     </section>
 </div>
 
-<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
                 <h4>BISMILLAH Developers</h4>
                 <p>Honest reviews. Best prices. Since 2024.</p>
             </div>
@@ -230,7 +161,6 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <!-- ✅ Changed: Alsamad Group -> Syed Sethar -->
             <p>&copy; 2025 S2S. As an Amazon Associate we earn from qualifying purchases.</p>
         </div>
     </div>
