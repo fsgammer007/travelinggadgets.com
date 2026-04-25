@@ -1,49 +1,67 @@
 <!DOCTYPE html>
+<!-- DOCTYPE: Browser ko batata hai ke ye HTML5 document hai -->
 <html lang="en">
+<!-- lang="en": Page English mein hai, accessibility aur SEO ke liye -->
 
 <head>
+    <!-- HEAD: Metadata, styles, scripts ke links -->
+    
+    <!-- META CHARSET: Character encoding UTF-8 (Urdu, Emoji, special characters support) -->
     <meta charset="UTF-8">
+    
+    <!-- VIEWPORT: Mobile devices ke liye responsive scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    <!-- ✅ Title changed to only "travelinggadgets 2026" -->
+    <!-- TITLE: Browser tab mein dikhta hai, search engine result ka title -->
     <title>travelinggadgets 2026</title>
     
+    <!-- META DESCRIPTION: Search result ke neeche description -->
     <meta name="description" content="Discover the best travel gadgets 2026. Honest reviews, expert recommendations, and exclusive affiliate deals on headphones, power banks, cameras, and more.">
+    
+    <!-- KEYWORDS: SEO ke liye relevant terms -->
     <meta name="keywords" content="travel gadgets, tech reviews, best gadgets 2026, affiliate marketing, wireless headphones, power bank, action camera">
-    <meta name="author" content="BISMILLAH">
+    
+    <!-- AUTHOR: Website ka owner -->
+    <meta name="author" content="travelinggadgets 2026">
+    
+    <!-- ROBOTS: Google ko batata hai konsi pages index karni hain -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
     
-    <!-- ⚠️ Temporary canonical (abhi ke liye khali, baad mein domain daal dena) -->
-    <!-- <link rel="canonical" href="https://travelinggadgets.dpdns.org"> -->
-    
+    <!-- OPEN GRAPH: Social media sharing ke liye (Facebook, WhatsApp, LinkedIn) -->
     <meta property="og:title" content="travelinggadgets 2026">
     <meta property="og:description" content="Best travel gadgets and exclusive deals.">
     <meta property="og:type" content="website">
-    <!-- ⚠️ OG image commented until you upload one -->
-    <!-- <meta property="og:image" content="https://travelinggadgets.dpdns.org/images/og-image.jpg"> -->
     
+    <!-- PRECONNECT & PRELOAD: Performance optimization (DNS lookup pehle se kar leta hai) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="style.css">
     
+    <!-- CSS STYLESHEET: External CSS file link -->
     <link rel="stylesheet" href="style.css" media="all">
     
-    <!-- Favicon (emoji) - works in most modern browsers -->
+    <!-- FAVICON: Browser tab ka icon (emoji based) -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎒</text></svg>">
 </head>
 
 <body>
+<!-- BODY: Jitna bhi content user ko dikhta hai, sab yahan aata hai -->
 
+<!-- ========== HEADER: Navigation bar ========== -->
 <header>
     <div class="container">
         <div class="header-flex">
-            <h1 class="logo">BISMILLAH <span>Developers</span></h1>
+            <!-- LOGO: Text-based logo (image nahi, SEO-friendly) -->
+            <h1 class="logo">travelinggadgets <span>2026</span></h1>
             <div class="header-right">
+                <!-- DARK MODE BUTTON: Light/Dark theme toggle -->
                 <button id="darkModeBtn" class="dark-btn" aria-label="Dark Mode Toggle">🌙 Dark</button>
+                <!-- MENU BUTTON: Mobile screen ke liye hamburger menu -->
                 <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
             </div>
         </div>
+        <!-- NAVIGATION MENU: Links to different pages -->
         <ul class="nav-menu" id="navMenu">
             <li><a href="#" onclick="showPage('home')">Home</a></li>
             <li><a href="#" onclick="showPage('reviews')">Reviews</a></li>
@@ -53,39 +71,49 @@
     </div>
 </header>
 
+<!-- ========== HOME PAGE (MAIN CONTENT) ========== -->
 <main id="homePage">
+    <!-- HERO SECTION: Top banner with heading and search bar -->
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">Best Travel Gadgets 2026</h1>
             <p>Discover the latest tech and exclusive affiliate deals for your next adventure</p>
             <div class="search-box">
+                <!-- SEARCH INPUT: User yahan product search kar sakta hai -->
                 <input type="text" id="searchInput" placeholder="Search products..." aria-label="Search products">
                 <button id="searchBtn" aria-label="Search">🔍 Search</button>
             </div>
         </div>
     </section>
 
+    <!-- CATEGORY SECTION: Shop by Category (Tech, Home, Fashion, Fitness) -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">Shop by Category</h2>
             <div class="category-grid" id="categoryGrid"></div>
+            <!-- JavaScript se dynamic categories load hongi -->
         </div>
     </section>
 
+    <!-- PRODUCT SECTION: Top Rated Products list -->
     <section class="section bg-white">
         <div class="container">
             <h2 class="section-title">Top Rated Products</h2>
             <div class="product-grid" id="productGrid"></div>
+            <!-- JavaScript se dynamic products load honge -->
         </div>
     </section>
 
+    <!-- BLOG SECTION: Latest blog posts -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">Latest from Our Blog</h2>
             <div class="blog-grid" id="blogGrid"></div>
+            <!-- JavaScript se dynamic blog posts load hongi -->
         </div>
     </section>
 
+    <!-- NEWSLETTER SECTION: Email subscription form -->
     <section class="newsletter">
         <div class="container">
             <h3>Subscribe for Best Deals</h3>
@@ -99,10 +127,11 @@
     </section>
 </main>
 
+<!-- ========== ABOUT PAGE (Hidden by default, JavaScript se show hota hai) ========== -->
 <div id="aboutPage" style="display:none">
     <section class="page-hero">
         <div class="container">
-            <h1>About BISMILLAH Developers</h1>
+            <h1>About Us</h1>
             <p>Your trusted source for honest product reviews since 2024</p>
         </div>
     </section>
@@ -118,6 +147,7 @@
     </section>
 </div>
 
+<!-- ========== CONTACT PAGE (Hidden by default) ========== -->
 <div id="contactPage" style="display:none">
     <section class="page-hero">
         <div class="container">
@@ -127,6 +157,7 @@
     </section>
     <section class="section">
         <div class="container">
+            <!-- CONTACT FORM: User message bhejne ke liye -->
             <form id="contactForm" class="contact-form">
                 <input type="text" id="contactName" placeholder="Your Name" required>
                 <input type="email" id="contactEmail" placeholder="Your Email" required>
@@ -137,11 +168,12 @@
     </section>
 </div>
 
+<!-- ========== FOOTER: Links aur copyright information ========== -->
 <footer>
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>BISMILLAH Developers</h4>
+                <h4>travelinggadgets</h4>
                 <p>Honest reviews. Best prices. Since 2024.</p>
             </div>
             <div class="footer-col">
@@ -161,11 +193,13 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 S2S. As an Amazon Associate we earn from qualifying purchases.</p>
+            <!-- COPYRIGHT: Copyright notice -->
+            <p>&copy; 2025 travelinggadgets. As an Amazon Associate we earn from qualifying purchases.</p>
         </div>
     </div>
 </footer>
 
+<!-- JAVASCRIPT: External JS file, defer attribute se page load hone ke baad chalta hai -->
 <script src="script.js" defer></script>
 </body>
 </html>
