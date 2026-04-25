@@ -1,0 +1,5 @@
+﻿/robots.txt
+  Content-Type: text/plain
+
+/sitemap.xml
+  Content-Type: application/xml
