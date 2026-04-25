@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://0838e314.travelinggadgets-in.pages.dev/sitemap.xml
